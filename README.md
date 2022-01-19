@@ -182,9 +182,13 @@ visualized on the console or plot viewer panel.
 ### The manuscript folder
 
 The `manuscript` folder contains a true working document often written in an 
-external word processing software. However, this can be an R markdown file if
-for example suitable templates can be found in the `rticles` to facilitate 
-publication. As before, use sub-folders to organize this work neatly.
+external word processing software. It also, at times, contain the output of 
+any analysis script, such as tables and rendered figures.
+
+Thee can be an R markdown file if for example suitable templates can be found in
+the `rticles` to facilitate publication. However, the use of R markdown should
+be done with much care (see notes on the `vignettes` folder). As before, use 
+sub-folders to organize this work neatly.
 
 ### The vignettes folder
 
