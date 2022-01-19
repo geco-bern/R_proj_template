@@ -10,7 +10,8 @@ overhead in making decisions on a project structure.
 
 ### A github project from the template
 
-To use the template create a new repository on github, as you otherwise would.
+To use the template create a new repository on github, as you otherwise would
+using the big green button. From the repository template dropdown menu, select `computationales/R-project-template`. Proceed as usual by naming your repository.
 
 ![](https://github.com/bluegreen-labs/environmental_data_science_101/raw/main/images/new_repo_1.png)
 
