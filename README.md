@@ -186,9 +186,10 @@ external word processing software. It also, at times, contain the output of
 any analysis script, such as tables and rendered figures.
 
 Thee can be an R markdown file if for example suitable templates can be found in
-the `rticles` to facilitate publication. However, the use of R markdown should
-be done with much care (see notes on the `vignettes` folder). As before, use 
-sub-folders to organize this work neatly.
+the [`rticles`](https://pkgs.rstudio.com/rticles/) R package to facilitate 
+publication. However, the use of R markdown should be done with much care 
+(see notes on the `vignettes` folder). As before, use sub-folders to organize
+this work neatly.
 
 ### The vignettes folder
 
