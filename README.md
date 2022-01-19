@@ -18,7 +18,7 @@ need to be made and code executed. This is bypassed by this setup.
 
 To use the template create a new repository on github, as you otherwise would
 using the big green button. If you are in the project on github you can hit
-the green button top right
+the green button top right (Use this template).
 
 ![](https://github.com/bluegreen-labs/environmental_data_science_101/raw/main/images/green_button.png)
 
