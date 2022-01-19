@@ -28,3 +28,118 @@ You can then clone the project to your local computer to add files.
 Although optional it is wise to rename the `*.Proj` file as this will not
 automatically change to your repository name. However, retaining the original
 name should not change any of the functionality.
+
+```bash
+git clone git@github.com:USER/YOUR_PROJECT.git
+```
+
+## Structure
+
+The structure of the template follows the structure of an R package without
+actually being one. There are several reasons for this.
+
+- Familiarizes you with an R package structure
+  - allowing for an optional switch to an R package
+- Avoids top level aggregation of data, code and reporting files
+- Splits the dynamic reporting from academic writing (`vignettes` vs. `manuscript`)
+- Splits pre-processing of data from working / included data (`data-raw` vs. `data`)
+- Splits R code from other scripts (bash / python in `src`)
+- Splits R functions from R analysis scripts (`R` vs `analysis`)
+
+Below you find a comprehensive list of what goes where an why, as well as some
+best practices on how to structure further data within these folders.
+
+### The R folder
+
+The `R` folder contains R functions, not scripts. This means code wrapped in a
+structure as such
+
+```R
+# A demo function
+#
+# This function demonstrates the general layout
+# of a function
+
+my_function <- function(parameter) {
+  some_actions
+}
+```
+
+Functions are actions you need more than once, which can not be generated
+easily with external packages and are tailored to your project.
+
+These functions should stand on their own with limited links to additional
+custom functions. Ideally you provide a brief title and description on the 
+function's purpose before.
+
+Writing functions seems an initial waste of time, you could easily just copy and
+paste some code in your analysis scripts. However, this means that if you
+decide certain aspects of this workflow you might have to hunt down these
+changes in all analysis scripts. Failing to do so will result in corrupted 
+analysis. In addition, writing functions will make it easy to re-use the code
+within the context of a new project, and if proven to be generally useful
+outside a single research project it can be integrated in a formal package.
+
+### The src folder
+
+The `src` folder contains scripts and code which is not R related, in packages
+this folder often contains Fortran or C code which needs to be compiled. Here,
+it is common to store bash or python functions which might assist in data
+cleaning or data gathering which can't be done in R alone.
+
+### The data-raw folder
+
+The `data-raw` folder contains, as the name suggests, raw data and the scripts
+to download and pre-process the data. This is data which requires significant
+pre-processing to be of use in analysis. In other words, this data is not 
+analysis ready (within the context of the project).
+
+To create full transparency in terms of the source of this raw data it is best
+to include (numbered) scripts to download and pre-process the data. Either in
+these scripts, or in a separate README, include the source of the data (reference)
+Ultimately, the output of the workflow in data-raw is data which is analysis ready.
+
+It is best practice to store various raw data products in their own sub-folder,
+with data downloading and processing scripts in the main `data-raw` folder.
+
+```
+data-raw/
+├─ raw_data_product/
+├─ 00_download_raw_data.R
+├─ 01_process_raw_data.R
+```
+
+Where possible it is good practice to store output data (in `data`) either as human 
+readable CSV files, or as R serialized files 
+(generated using with the `saveRDS()` function).
+
+It is common data raw data is large in size, which limits the option of storing
+the data in a git repository. If this isn't possible this data can be excluded
+from the git repository by explicitly adding directories to `.gitignore` to
+avoid accidentally adding them.
+
+When dealing with heterogeneous systems dynamic paths can be set to (soft) link
+to raw-data outside the project directory.
+
+### The data folder
+
+The data folder contains analysis ready data. This is data which you can use,
+as is. This often contains the output of a `data-raw` pre-processing workflow,
+but can also include data which doesn't require any intervention, e.g. a land
+cover map which is used as-is.
+
+It is best to store data in transparently named sub-folders according to the
+product type, once more including references to the source of the data where
+possible. Once more, download scripts can be used to ensure this transparency
+as well.
+
+```
+data/
+├─ data_product/
+├─ 00_download_data.R
+```
+
+### The analysis folder
+
+
+
