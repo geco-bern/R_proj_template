@@ -199,3 +199,16 @@ code than it does text, it should be considered an R script or function
 more text than code it probably is easier to collaborate on a true word 
 processing file (or a Google Docs file). The use case where the notebooks might
 serve some importance is true reporting of general statistics.
+
+Finally, the use of R markdown also encourages bad project management practices.
+Most commonly this originates from the fact that rendering of the document is
+relative to the location of the document itself. If no session management tools
+such as the package [`here`](https://here.r-lib.org/) are used this automatically
+causes files to pile up in the top most level of a project, undoing most efforts
+to structure data and code. This is further compounded by the fact that there is
+a tendency to remain within the working environment (document), and therefore 
+code blocks which should be functions are not translated as such.
+
+In short, R markdown files have their function in reporting results, once
+generated (through functions or analysis scripts) but should be avoided to
+develop code / ideas (see cognitive switching remark)!
