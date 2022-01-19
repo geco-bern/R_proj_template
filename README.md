@@ -17,15 +17,18 @@ need to be made and code executed. This is bypassed by this setup.
 ### A github project from the template
 
 To use the template create a new repository on github, as you otherwise would
-using the big green button. From the repository template dropdown menu, select `computationales/R-project-template`. Proceed as usual by naming your repository.
+using the big green button. If you are in the project on github you can hit
+the green button top right
+
+![](https://github.com/bluegreen-labs/environmental_data_science_101/raw/main/images/green_button.png)
+
+Otherwise you can select the repository from the template dropdown menu, select `computationales/R-project-template`.
 
 ![](https://github.com/bluegreen-labs/environmental_data_science_101/raw/main/images/new_repo_1.png)
 
-Name your repository!
+Proceed as usual by naming your repository. However, be careful to select the 
+correct owner of the project if you have multiple identities.
 ![](https://github.com/bluegreen-labs/environmental_data_science_101/raw/main/images/new_repo_2.png)
-
-However, be careful to select the correct owner of the project
-if you have multiple identities.
 
 ### Clone to your local computer
 
