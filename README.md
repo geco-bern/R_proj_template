@@ -6,6 +6,12 @@ project with a standard set of directories. This ensures a project-oriented
 and consistent workflow across all lab members, and removes some of the mental
 overhead in making decisions on a project structure.
 
+It must be noted that some of the functionality as provided by this setup is
+included in the [`usethis`](https://usethis.r-lib.org/) R package, the aim is 
+slightly different. For one, `usethis` is aimed at populating a package structure.
+Second, there is not preset full template, hence many individual decisions still
+need to be made and code executed. This is bypassed by this setup.
+
 ## Use
 
 ### A github project from the template
