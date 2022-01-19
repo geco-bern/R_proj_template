@@ -177,9 +177,25 @@ visualized on the console or plot viewer panel.
 The `manuscript` folder contains a true working document often written in an 
 external word processing software. However, this can be an R markdown file if
 for example suitable templates can be found in the `rticles` to facilitate 
-publication.
+publication. As before, use sub-folders to organize this work neatly.
 
 ### The vignettes folder
 
+The `vignettes` folder contains dynamic notebooks, i.e. R markdown files. These
+might serve a dual use between analysis and manuscript. However, the use case
+in reality should be considered very narrowly. In general, as they are commonly
+used, R markdown files are rarely portable. The argument that it is easy to 
+share rendered html files is invalid if you adhere to an open workflow with
+github based snapshots. The latter ensures that all code is visible, all data
+is visible, and the project is truly reproducible. Furthermore, R markdown
+documents mix two cognitive tasks, writing text and writing code. Switching
+between these two modes comes with undue overhead. If you code, you should not
+be writing prose, and vise versa.
 
-
+Unless applied to small, educational, examples a markdown file has little place
+in a code heavy environment. In short, if your R markdown file contains more 
+code than it does text, it should be considered an R script or function 
+(with comments or documentation). Conversely, if your markdown file contains
+more text than code it probably is easier to collaborate on a true word 
+processing file (or a Google Docs file). The use case where the notebooks might
+serve some importance is true reporting of general statistics.
