@@ -170,7 +170,7 @@ is carry over between analysis, either merge the two files or use numbered
 prefixes.
 
 ```
-data-raw/
+analysis/
 ├─ statistics/
 │  ├─ 00_random_forest_model.R
 │  ├─ 01_random_forest_tuning.R
