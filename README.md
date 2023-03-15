@@ -227,3 +227,35 @@ code blocks which should be functions are not translated as such.
 In short, R markdown files have their function in reporting results, once
 generated (through functions or analysis scripts) but should be avoided to
 develop code / ideas (see cognitive switching remark)!
+
+### Capturing your session state
+
+If you want to ensure full reproducibility you will need to capture the state of the system and libraries with which you ran the original analysis. Note that you will have to execute all code and required libraries for `renv` to correctly capture all used libraries.
+
+When setting up your project you can run:
+
+``` r
+# Initiate a {renv} environment
+renv::init()
+```
+
+To initiate your static R environment. Whenever you want to save the state of your project (and its packages) you can call:
+
+``` r
+# Save the current state of the environment / project
+renv::snapshot()
+```
+
+To save any changes made to your environment. All data will be saved in a project description file called a lock file (i.e. `renv.lock`). It is advised to update the state of your project regularly, and in particular before closing a project.
+
+When you move your project to a new system, or share a project on github with collaborators, you can revert to the original state of the analysis by calling:
+
+``` r
+# On a new system, or when inheriting a project
+# from a collaborator you can use a lock file
+# to restore the session/project state using
+renv::restore()
+```
+
+> NOTE: As mentioned in the {renv} documentation: "For development and collaboration, the `.Rprofile`, `renv.lock` and `renv/activate.R` files should be committed to your version control system. But the `renv/library` directory should normally be ignored. Note that `renv::init()` will attempt to write the requisite ignore statements to the project `.gitignore`." We refer to \@ref(learning-objectives-6) for details on github and its use.
+
